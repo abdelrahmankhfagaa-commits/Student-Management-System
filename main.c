@@ -6,9 +6,9 @@
 typedef struct
 {
     int ID;
-    char name[50];
+    char name[30];
     float grade;
-} student;
+} s_student;
 
 // Define an enumeration for user roles
 typedef enum
@@ -27,7 +27,7 @@ void admin_menu();
 void student_login();
 
 // Global variables
-student *students = NULL;
+s_student *students = NULL;
 int studentCount = 0;
 
 int main()
@@ -136,7 +136,7 @@ void add_student()
     }
 
     // Safe realloc: use a temp pointer to avoid losing data on failure
-    student *tmp = realloc(students, (studentCount + 1) * sizeof(student));
+    s_student *tmp = realloc(students, (studentCount + 1) * sizeof(s_student));
     if (tmp == NULL)
     {
         printf("Memory allocation failed.\n");
@@ -246,7 +246,7 @@ void delete_student()
     }
     else
     {
-        student *tmp = realloc(students, studentCount * sizeof(student));
+        s_student *tmp = realloc(students, studentCount * sizeof(s_student));
         if (tmp != NULL)
             students = tmp;
     }
