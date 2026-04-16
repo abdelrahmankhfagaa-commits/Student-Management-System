@@ -6,7 +6,7 @@
 typedef struct
 {
     int ID;
-    char name[50];
+    char name[30];
     float grade;
 } student;
 
